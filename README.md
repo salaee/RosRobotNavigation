@@ -14,8 +14,8 @@ In this project, I tried to implement what were possible in ROS envronment. For 
 I designed the following envrionment to see how the robot behaves. <br> <br>
 ![World](https://github.com/salaee/RosRobotNavigation/blob/master/comp6912_project_world/world/autolab.png "World") <br> <br>
 ### How to run
-Operating System: Ubuntu 14.04.1 LTS
-Copy the folders in your project files(i.e. ~/catkin_ws/src/), and then you might need to do the following
+Operating System: Ubuntu 14.04.1 LTS <br>
+Copy the folders in your project files(i.e. ~/catkin_ws/src/), and then you might need to do the following:
 ```sh
 $ cd ~/catkin_ws
 $ source devel/setup.bash
@@ -26,7 +26,7 @@ If above steps are done successfully, then:
 ```sh
 $ roslaunch comp6912_project_world all.launch
 ```
-Now you should see the world envrionment being launched and the last step is to run one of the three scripts available in `comp6912_project`.
+Now you should see the world envrionment being launched and the last step is to run one of the three scripts available in `comp6912_project`. <br>
 For instance: (in a new terminal)
 ```sh
 $ rosrun comp6912_project pass_corridor.py
