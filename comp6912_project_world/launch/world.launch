@@ -1,0 +1,7 @@
+<launch>
+	<!-- Launch Stage using the autolab.world file in this package.  The only
+         complicated thing here is the 'args' attribute which is set to find
+         the autolab.world file. -->
+	<node pkg="stage_ros" type="stageros" name="stageros" args="$(find comp6912_project_world)/world/autolab.world"/>
+
+</launch>

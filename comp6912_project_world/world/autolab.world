@@ -1,0 +1,82 @@
+include "irobot_create.inc"
+include "irobot_target_create.inc"
+include "/opt/ros/indigo/share/stage/worlds/map.inc"
+include "hokuyo_URG-04LX-UG01.inc"
+
+# time to pause (in GUI mode) or quit (in headless mode (-g)) the simulation
+quit_time 3600 # 1 hour of simulated time
+paused 0
+
+# configure the GUI window
+window
+(
+#    size [700.000 900.000]
+    scale 40   # pixels per meter
+    show_data 1
+    show_clock 0
+    show_flags 0
+    show_trailfast 0
+)
+
+irobot_create
+(
+    name "robot"
+    drive "diff"
+    localization "gps"
+
+    stack_children 0
+     
+    hokuyolaser(
+     #ctrl "lasernoise"  # uncomment this line to run a laser noise generator
+     pose [0 0 0.21 0]
+    )
+    # initial pose of robot
+    #pose [-9 6 0.21 0]
+)
+
+irobot_target_create
+(
+    name "target"
+    drive "diff"
+    localization "gps"
+
+    stack_children 0
+     
+    hokuyolaser_target(
+     #ctrl "lasernoise"  # uncomment this line to run a laser noise generator
+     pose [0 0 0.21 0]
+    )
+
+    # initial pose of target
+    #pose [0 9 0.21 0]
+)
+
+define target model
+(
+  size [0.30 0.30 0.05]
+
+  block( 
+    points 4 
+    point[0] [ -0.15 -0.15 ]
+    point[1] [ 0.15 -0.15 ]
+    point[2] [ 0.15  0.15 ]
+    point[3] [ -0.15 0.15 ]
+    z [0 0.05]
+  )
+  
+  obstacle_return 0
+  gui_move 0
+)
+
+# load an environment bitmap
+floorplan
+(	
+  bitmap "autolab.png"
+  size [20.000 20.000 0.500]
+  boundary 1
+  obstacle_return 1
+
+  name "autolab"
+)
+
+

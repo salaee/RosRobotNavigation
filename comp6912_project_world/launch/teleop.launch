@@ -1,0 +1,8 @@
+<launch>
+	<!-- Start the turtlebot teleoperation node.  Note that by default this
+         node publishes on /teleop_key/cmd_vel, so we need to remap this to
+         /cmd_vel. -->
+	<node pkg="turtlebot_teleop" type="turtlebot_teleop_key" name="teleop_key" output="screen">
+		<remap from="/teleop_key/cmd_vel" to="/robot_0/cmd_vel"/>
+	</node>
+</launch>
