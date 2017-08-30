@@ -32,6 +32,7 @@ For instance: (in a new terminal)
 $ rosrun comp6912_project pass_corridor.py
 ```
 
+[This project was part of my course project of the COMP 6912 - Autonomous Robotics at MUN.ca] <br>
 Happy coding :)
 
 [Semi-autonomous Navigation of a Robotic Wheelchair]: <https://link.springer.com/article/10.1023/A:1016371922451>
